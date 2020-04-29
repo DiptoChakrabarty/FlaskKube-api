@@ -5,7 +5,7 @@ from apiapp.models import product,productSchema
 product_schema = productSchema()
 products_schema = productSchema(many=True)
 
-
+db.create_all()
 @app.route("/productadd",methods=["POST"])
 def add_product():
     name= request.json["name"]

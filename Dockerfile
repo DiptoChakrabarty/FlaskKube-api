@@ -2,6 +2,6 @@ FROM python
 RUN  mkdir app
 WORKDIR  /app
 COPY  .  .
-RUN "pip install -r requirements.txt"
+RUN  pip3 install -r requirements.txt
 EXPOSE  5000
-CMD  ["python","app.py"]
+CMD  ["python3","app.py"]
