@@ -24,14 +24,14 @@ def add_product():
 def show_products():
     all = product.query.all()
     result = products_schema.dump(all)
-    return products_schema.jsonify(result.data) 
+    return products_schema.jsonify(result) 
 
 @app.route("/product/<id>")
 def show_product(id):
-    result.data =  product.query.get(id)
-    return product_schema.jsonify(result.data) 
+    result =  product.query.get(id)
+    return product_schema.jsonify(result) 
 
-@app.route("/product/<id>",methods=["PUTS"])
+@app.route("/product/<id>",methods=["PUT"])
 def update(id):
     result =  product.query.get(id)
 
@@ -46,9 +46,12 @@ def update(id):
     result.qty= qty
 
     db.session.commit()
+    return product_schema.jsonify(result)
 
 @app.route("/product/<id>",methods=["DELETE"])
-def def(id):
+def delete_item(id):
     result =  product.query.get(id)
     db.session.delete(result)
     db.session.commit()
+
+    return "Removed"
