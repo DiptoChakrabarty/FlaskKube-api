@@ -30,3 +30,25 @@ def show_products():
 def show_product(id):
     result.data =  product.query.get(id)
     return product_schema.jsonify(result.data) 
+
+@app.route("/product/<id>",methods=["PUTS"])
+def update(id):
+    result =  product.query.get(id)
+
+    name= request.json["name"]
+    description= request.json["description"]
+    price= request.json["price"]
+    qty= request.json["qty"]
+
+    result.name = name
+    result.description =description
+    result.price = price
+    result.qty= qty
+
+    db.session.commit()
+
+@app.route("/product/<id>",methods=["DELETE"])
+def def(id):
+    result =  product.query.get(id)
+    db.session.delete(result)
+    db.session.commit()
