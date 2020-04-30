@@ -15,9 +15,9 @@ services:
   db:
     container_name: sqlflask
     restart: always
-    image: mysql
+    image: sqlflask 
     volumes:
-        - .:/db
+        - .:/home/chuck/db
     environment:
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: 'dipto'

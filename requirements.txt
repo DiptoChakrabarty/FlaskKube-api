@@ -4,4 +4,5 @@ flask-marshmallow
 marshmallow-sqlalchemy
 mysqlclient
 PyMySQL
+cryptography
 mysql-connector-python
