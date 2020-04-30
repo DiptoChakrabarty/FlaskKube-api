@@ -12,7 +12,7 @@ services:
     depends_on:
         - db
   db:
-    container_name: sqldb
+    container_name: sqlflask
     image: mysql
     volumes:
         - /var/lib/mysql
