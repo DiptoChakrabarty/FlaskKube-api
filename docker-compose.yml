@@ -19,8 +19,8 @@ services:
     volumes:
         - .:/db
     environment:
-      MYSQL_USER: dipto
-      MYSQL_PASSWORD: 'dipto'
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: 'dipto'
       MYSQL_DATABASE: 'product'
     ports:
       - "3306:3306"

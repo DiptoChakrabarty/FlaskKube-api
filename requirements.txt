@@ -3,4 +3,5 @@ flask-sqlalchemy
 flask-marshmallow 
 marshmallow-sqlalchemy
 mysqlclient
-pymysql
+PyMySQL
+mysql-connector-python
