@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     container_name: appflask
+    restart: always
     image: flaskapp
     ports:
      - "5000:5000"
@@ -13,10 +14,13 @@ services:
         - db
   db:
     container_name: sqlflask
+    restart: always
     image: mysql
     volumes:
-        - /var/lib/mysql
+        - .:/db
     environment:
-      MYSQL_ROOT_PASSWORD: dipto
+      MYSQL_USER: dipto
+      MYSQL_PASSWORD: 'dipto'
+      MYSQL_DATABASE: 'product'
     ports:
       - "3306:3306"
