@@ -1,0 +1,30 @@
+apiVersion: app/v1
+kind: Deployment
+metadata: 
+    name: mysql-db
+spec:
+    selector:
+        matchlabels:
+            tier: db
+    template:
+        metadata:
+            name: mysql-db
+            labels:
+                tier: db
+        spec:
+            containers:
+                - name: mysql-db
+                  image: sqlflask
+                  env:
+                    - name: username
+                      valueFrom:
+                        secretKeyRef:
+                            name: app-secrets
+                            key: username
+                    - name: password
+                      valueFrom:
+                        secretKeyRef:
+                            name: app-secrets
+                            key: password
+
+            
