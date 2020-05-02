@@ -13,18 +13,14 @@ spec:
                 tier: db
         spec:
             containers:
-                - name: mysql-db
+                - name: sqlflask
                   image: sqlflask
-                  env:
-                    - name: username
-                      valueFrom:
-                        secretKeyRef:
-                            name: app-secrets
-                            key: username
-                    - name: password
+                - env:
+                    - name: MYSQL_ROOT_PASSWORD
                       valueFrom:
                         secretKeyRef:
                             name: app-secrets
                             key: password
+                   
 
             
