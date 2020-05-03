@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: flaskapp
+    labels:
+        app: api 
 spec:
     replicas: 3
     selector:
@@ -13,6 +15,5 @@ spec:
                 app: api
         spec:
             containers:
-                - name: flask-app
-                  image: flaskapp
-                  
+                - image: flaskapp:latest
+                  name: api-app

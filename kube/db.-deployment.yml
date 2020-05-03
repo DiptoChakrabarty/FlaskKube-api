@@ -13,9 +13,9 @@ spec:
                 tier: db
         spec:
             containers:
-                - name: sqlflask
+                - name: sqlflask-app
                   image: sqlflask
-                - env:
+                  env:
                     - name: MYSQL_ROOT_PASSWORD
                       valueFrom:
                         secretKeyRef:
