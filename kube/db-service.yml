@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: sql-svc 
+spec:
+    type: NodePort
+    ports:
+        - targetport: 3306
+          port: 3306
+          nodePort: 3306
+    selector:
+        tier: db
