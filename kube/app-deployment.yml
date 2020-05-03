@@ -13,8 +13,6 @@ spec:
                 app: api
         spec:
             containers:
-                - name: flaskapp
+                - name: flask-app
                   image: flaskapp
-                  ports:
-                    - containerPort: 5000
-                      name: flaskapp
+                  
