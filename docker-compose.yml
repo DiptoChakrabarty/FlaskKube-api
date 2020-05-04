@@ -21,6 +21,7 @@ services:
     environment:
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: 'dipto'
+      MYSQL_ROOT_HOST: '0.0.0.0'
       MYSQL_DATABASE: 'product'
     ports:
       - "3306:3306"
