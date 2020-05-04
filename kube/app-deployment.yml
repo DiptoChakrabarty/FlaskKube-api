@@ -15,7 +15,7 @@ spec:
                 app: api
         spec:
             containers:
-                - image: diptochakrabarty/api:appv2
+                - image: diptochakrabarty/api:appv3
                   name: api-app
                   ports:
                     - containerPort: 5000

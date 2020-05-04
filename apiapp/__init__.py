@@ -6,7 +6,7 @@ import os
 app=Flask(__name__)
 path= os.path.abspath(os.path.dirname(__file__))
 db= SQLAlchemy(app)
-app.config["SQLALCHEMY_DATABASE_URI"]= 'mysql+pymysql://root:dipto@0.0.0.0:3306/product'
+app.config["SQLALCHEMY_DATABASE_URI"]= 'mysql+pymysql://root:dipto@sql-svc:3306/product'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 db.init_app(app)
 db.create_all()
