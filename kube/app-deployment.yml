@@ -15,5 +15,8 @@ spec:
                 app: api
         spec:
             containers:
-                - image: flaskapp:latest
+                - image: diptochakrabarty/api:appv1
                   name: api-app
+                  ports:
+                    - containerPort: 5000
+                  imagePullPolicy: Always

@@ -14,7 +14,7 @@ spec:
         spec:
             containers:
                 - name: sqlflask-app
-                  image: sqlflask
+                  image: diptochakrabarty/api:dbv1
                   env:
                     - name: MYSQL_ROOT_PASSWORD
                       valueFrom:
@@ -24,6 +24,7 @@ spec:
                   ports:
                     - containerPort: 3306
                       name: sqlflask
+                  imagePullPolicy: Always
                    
 
             
