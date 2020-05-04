@@ -1,3 +1,6 @@
 FROM mysql
+ENV MYSQL_USER: 'root'
+ENV MYSQL_ROOT_PASSWORD: 'dipto'
+ENV MYSQL_DATABASE: 'product'
 EXPOSE  3306
 CMD  ["mysqld"]

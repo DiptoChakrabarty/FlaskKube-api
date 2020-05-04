@@ -14,13 +14,14 @@ spec:
         spec:
             containers:
                 - name: sqlflask-app
-                  image: diptochakrabarty/api:dbv1
+                  image: diptochakrabarty/api:dbv2
                   env:
                     - name: MYSQL_ROOT_PASSWORD
                       valueFrom:
                         secretKeyRef:
                             name: app-secrets
                             key: password
+                        
                   ports:
                     - containerPort: 3306
                       name: sqlflask
