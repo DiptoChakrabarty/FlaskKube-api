@@ -21,6 +21,11 @@ spec:
                         secretKeyRef:
                             name: app-secrets
                             key: password
+                    - name: MYSQL_DATABASE
+                      valueFrom:
+                        secretKeyRef:
+                            name: app-secrets
+                            key: database
                         
                   ports:
                     - containerPort: 3306
