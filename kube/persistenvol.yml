@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: dbvol
+spec:
+    storageClassName: manual
+    accessMode:
+        - ReadWrite
+    resources:
+        requests:
+            storage: 3Gi

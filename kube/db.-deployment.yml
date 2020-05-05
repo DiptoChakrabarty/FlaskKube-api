@@ -26,6 +26,10 @@ spec:
                     - containerPort: 3306
                       name: sqlflask
                   imagePullPolicy: Always
-                   
+            volumes:
+              - name: mysqlstorage
+                persistentVolumeClaim:
+                  claimName: dbvol
+              
 
             
