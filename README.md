@@ -1,6 +1,12 @@
 # api
 
 
+This Project demoestrates how to deploy an API in docker and Kubernetes
+
+the api has been built using Flask and supported by a mysql database 
+
+
+
 - Send Post Request 
 ```sh
 
