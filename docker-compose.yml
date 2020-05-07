@@ -3,7 +3,7 @@ services:
   web:
     container_name: appflask
     restart: always
-    image: flaskapp
+    image: diptochakrabarty/api:appv1
     ports:
      - "5000:5000"
     volumes:
@@ -15,7 +15,7 @@ services:
   db:
     container_name: sqlflask
     restart: always
-    image: sqlflask 
+    image: diptochakrabarty/api:dbv2
     volumes:
         - .:/home/chuck/db
     environment:

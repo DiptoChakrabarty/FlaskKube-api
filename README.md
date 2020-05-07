@@ -36,10 +36,34 @@ For all the steps
 
 ###  Using Docker
 
+Dockerfile for flask backend is in current directory
+
+Dockerfile for DataBase is in folder db
+
 ```sh
 
+ - To run in background
   docker-compose up -d
 
+ - Run Normally
+  docker-compose up
+
+```
+
+
+### Using Kubernetes
+
+I have run and tested the application in minikube and online kubernetes IDE
+
+```sh
+ 
+ - kubectl apply -f kube
+
+ - Check service Ip of app
+
+    kubectl get svc
+ 
+ - Send requests in the ip
 ```
 
 
