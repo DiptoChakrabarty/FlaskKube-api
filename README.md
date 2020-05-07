@@ -1,11 +1,53 @@
 # api
 
 
-This Project demoestrates how to deploy an API in docker and Kubernetes
+This Project demoestrates how to deploy an API in docker and Kubernetes,
 
 the api has been built using Flask and supported by a mysql database 
 
 
+## How to run the project
+
+For all the steps 
+
+```sh
+- git clone https://github.com/DiptoChakrabarty/api.git
+
+- cd apiapp
+```
+
+### Using Python only
+
+
+```sh
+  - Initialize DataBase
+
+  In your terminal
+  > python3
+  > from apiapp import db
+  > db.create_all()
+  > exit
+
+  - Run Application API
+
+  python3 app.py
+
+```
+
+###  Using Docker
+
+```sh
+
+  docker-compose up -d
+
+```
+
+
+
+
+## Send your Requests
+
+You can send request using Postman  or using your terminal like this
 
 - Send Post Request 
 ```sh
@@ -44,3 +86,13 @@ curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:
 }'  10.109.209.60:5000/product/2
 
 ```
+
+
+## Tech Stack
+
+- Flask
+- Flask-SQLAlchemy
+- SQL
+- Docker
+- Docker Compose
+- Kubernetes
