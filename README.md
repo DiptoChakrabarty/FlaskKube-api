@@ -86,6 +86,9 @@ curl 10.109.209.60:5000/products
 
 
 - Send Post Request 
+
+Allows users to add items
+
 ```sh
 
 curl --header "Content-Type: application/json"   --request POST --data '{
@@ -102,6 +105,8 @@ curl --header "Content-Type: application/json"   --request POST --data '{
 
 - Put Request for a product
 
+Allows user to modify a specific item already entered
+
 ```sh
  curl --header "Content-Type: application/json"   --request PUT --data '{
 "name": "Splinter Cell Chaos Theory",
@@ -112,10 +117,12 @@ curl --header "Content-Type: application/json"   --request POST --data '{
 
 ```
 
-<img src="images/PUT1.png">
+<img src="images/PUT!!(1).png">
 
 
 - Delete Request
+
+Allows users to remove items
 
 ```sh
 curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:5000/product/4
