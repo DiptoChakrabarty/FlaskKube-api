@@ -75,6 +75,16 @@ I have run and tested the application in minikube and online kubernetes IDE
 
 You can send request using Postman  or using your terminal like this
 
+
+- Send Get Request
+ This will allow user to see all contents he has entered
+
+```sh
+curl 10.109.209.60:5000/products
+
+```
+
+
 - Send Post Request 
 ```sh
 
@@ -86,20 +96,9 @@ curl --header "Content-Type: application/json"   --request POST --data '{
 }'  10.109.209.60:5000/productadd
 
 ```
+<img src="images/POST.png">
 
-- Send Get Request
 
-```sh
-curl 10.109.209.60:5000/products
-
-```
-
-- Delete Request
-
-```sh
-curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:5000/product/4
-
-```
 
 - Put Request for a product
 
@@ -112,6 +111,19 @@ curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:
 }'  10.109.209.60:5000/product/2
 
 ```
+
+<img src="images/PUT1.png">
+
+
+- Delete Request
+
+```sh
+curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:5000/product/4
+
+```
+
+<img src="images/DELETE11.png">
+
 
 
 ## Tech Stack
