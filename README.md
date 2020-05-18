@@ -117,7 +117,7 @@ Allows user to modify a specific item already entered
 
 ```
 
-<img src="images/PUT!!(1).png">
+<img src="images/PUT1.png">
 
 
 - Delete Request
