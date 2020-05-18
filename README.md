@@ -1,9 +1,9 @@
 # api
 
 
-This Project demoestrates how to deploy an API in docker and Kubernetes,
+This Project demonstrates how to deploy an API in docker and Kubernetes,
 
-the api has been built using Flask and supported by a mysql database 
+The api has been built using Flask and supported by a mysql database 
 
 
 ## How to run the project
@@ -63,8 +63,10 @@ I have run and tested the application in minikube and online kubernetes IDE
 
     kubectl get svc
  
- - Send requests in the ip
+ - Send requests in the ip provided in the service ip
 ```
+
+<img src="images/SVC.png">
 
 
 
