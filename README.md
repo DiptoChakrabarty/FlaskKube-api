@@ -1,4 +1,4 @@
-# api
+# Flask Kube api  :triangular_flag_on_post:
 
 
 This Project demonstrates how to deploy an API in docker and Kubernetes,
@@ -6,7 +6,7 @@ This Project demonstrates how to deploy an API in docker and Kubernetes,
 The api has been built using Flask and supported by a mysql database 
 
 
-## How to run the project
+## How to run the project  :information_source:
 
 For all the steps 
 
@@ -16,7 +16,7 @@ For all the steps
 - cd apiapp
 ```
 
-### Using Python only
+### Using Python only :o:
 
 
 ```sh
@@ -34,7 +34,7 @@ For all the steps
 
 ```
 
-###  Using Docker
+###  Using Docker :whale:
 
 Dockerfile for flask backend is in current directory
 
@@ -137,9 +137,9 @@ curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:
  | --- | --- | --- |
  | /productadd | POST | Add data |
  | /products | GET | Show data |
- | /product/<id> | GET | Show individual items data |
- | /product/<id> | PUT | Update items data |
- | /product/<id> | DELETE| Delete items  |
+ | /product/id | GET | Show individual items data |
+ | /product/id | PUT | Update items data |
+ | /product/id  | DELETE| Delete items  |
 
 
 
