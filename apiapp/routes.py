@@ -1,11 +1,14 @@
 from apiapp import app,db,ma,jsonify,request
-from apiapp.models import product,productSchema
+from apiapp.models import product,productSchema,users
+import bcrypt
 
 
 product_schema = productSchema()
 products_schema = productSchema(many=True)
 
 db.create_all()
+
+### Routes
 @app.route("/productadd",methods=["POST"])
 def add_product():
     name= request.json["name"]
@@ -55,3 +58,20 @@ def delete_item(id):
     db.session.commit()
 
     return "Removed"
+
+#### Users
+
+@app.route("/users",methods=["POST"])
+def create_user():
+    data = request.get_json()
+    hashed = bcrypt.hashpw(data["password"],bcrypt.gensalt())
+    new_user = users(username=data["username"],password=hashed )
+    
+    db.session.add(new_user)
+    db.session.commit()
+
+    return jsonify({
+        "msg": "User Added",
+        "status": 200
+    })
+
