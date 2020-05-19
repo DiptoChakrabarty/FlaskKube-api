@@ -135,6 +135,11 @@ curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:
 
  | Route | Method | Function | 
  | --- | --- | --- |
+ | /productadd | POST | Add data |
+ | /products | GET | Show data |
+ | /product/<id> | GET | Show individual items data |
+ | /product/<id> | PUT | Update items data |
+ | /product/<id> | DELETE| Delete items  |
 
 
 
