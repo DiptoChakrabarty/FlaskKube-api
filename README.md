@@ -131,6 +131,11 @@ curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:
 
 <img src="images/DELETE11.png">
 
+## Routes
+
+ | Route | Method | Function | 
+ | --- | --- | --- |
+
 
 
 ## Tech Stack
