@@ -51,7 +51,7 @@ Dockerfile for DataBase is in folder db
 ```
 
 
-### Using Kubernetes
+### Using Kubernetes :boom:
 
 I have run and tested the application in minikube and online kubernetes IDE
 
@@ -71,7 +71,7 @@ I have run and tested the application in minikube and online kubernetes IDE
 
 
 
-## Send your Requests
+## Send your Requests 	:bomb: 
 
 You can send request using Postman  or using your terminal like this
 
@@ -131,7 +131,7 @@ curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:
 
 <img src="images/DELETE11.png">
 
-## Routes
+## Routes  :anger:
 
  | Route | Method | Function | 
  | --- | --- | --- |
@@ -143,7 +143,7 @@ curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:
 
 
 
-## Tech Stack
+## Tech Stack :muscle:
 
 - Flask
 - Flask-SQLAlchemy
