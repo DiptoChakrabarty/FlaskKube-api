@@ -1,6 +1,7 @@
 from apiapp import app,db,ma,jsonify,request,make_response
 from apiapp.models import product,productSchema,users
-import bcrypt ,jwt,datetime
+import bcrypt ,datetime
+from flask_jwt import JWT,jwt_required
 
 
 product_schema = productSchema()
@@ -88,18 +89,18 @@ def login():
     auth= request.authorization
 
     if not auth or not auth.username or not auth.password:
-        return make_response("Unable to Verify",401,{'WWW-Authenticate': 'Basic realm'="Login Required"})
+        return make_response("Unable to Verify",401,{'WWW-Authenticate': 'Basic realm'-"Login Required"})
 
     user = users.query.filter_by(username=auth.username).first()
 
     if not user:
-        return make_response("Unable to Verify",401,{'WWW-Authenticate': 'Basic realm'="Login Required"})
+        return make_response("Unable to Verify",401,{'WWW-Authenticate': 'Basic realm'-"Login Required"})
     
     if bcrypt.checkpw(auth.password, user.password):
-        token = jwt.encode({'id': user.id,'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=45),app.config["SECRET_KEY"] })
+        token = jwt.encode({'id': user.id,'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=45),app.config["SECRET_KEY"]})
 
         return jsonify({'token': token.decode('UTF-8')})
         
-    return make_response("Unable to Verify",401,{'WWW-Authenticate': 'Basic realm'="Login Required"})
+    return make_response("Unable to Verify",401,{'WWW-Authenticate': 'Basic realm'-"Login Required"})
 
 

@@ -11,7 +11,11 @@ app.config["SECRET_KEY"]="kubernetes"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False
 db.init_app(app)
-db.create_all()
+
+@app.before_first_request
+def create_tables():
+    db.create_all()
+
 
 ma= Marshmallow(app)
 
