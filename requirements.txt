@@ -6,5 +6,5 @@ marshmallow-sqlalchemy
 PyMySQL
 cryptography
 mysql-connector-python
-make_response
 bcrypt
+make_response

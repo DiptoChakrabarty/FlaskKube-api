@@ -2,7 +2,7 @@ from apiapp import app,db,ma,jsonify,request
 from apiapp.models import product,productSchema,users
 import bcrypt ,datetime
 from flask_jwt import JWT,jwt_required
-from security import authenticate,identity
+from apiapp.security import authenticate,identity
 
 
 jwt = JWT(app, authenticate, identity)
