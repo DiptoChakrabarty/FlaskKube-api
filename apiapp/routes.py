@@ -3,11 +3,13 @@ from apiapp.models import product,productSchema,users
 import bcrypt ,datetime
 from flask_jwt import JWT,jwt_required
 from apiapp.security import authenticate,identity
+from datetime import timedelta
 
 
 jwt = JWT(app, authenticate, identity)
 product_schema = productSchema()
 products_schema = productSchema(many=True)
+app.config['JWT_EXPIRATION_DELTA'] = timedelta(seconds=1800)
 
 db.create_all()
 
@@ -68,7 +70,8 @@ def delete_item(id):
 @app.route("/users",methods=["POST"])
 def create_user():
     data = request.get_json()
-    hashed = bcrypt.hashpw(data["password"],bcrypt.gensalt())
+    
+    hashed = bcrypt.hashpw(data["password"].encode('utf-8'),bcrypt.gensalt())
     new_user = users(username=data["username"],password=hashed )
 
     db.session.add(new_user)
