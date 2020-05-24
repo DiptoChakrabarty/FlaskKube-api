@@ -1,9 +1,11 @@
-from apiapp import app,db,ma,jsonify,request,make_response
+from apiapp import app,db,ma,jsonify,request
 from apiapp.models import product,productSchema,users
 import bcrypt ,datetime
 from flask_jwt import JWT,jwt_required
+from security import authenticate,identity
 
 
+jwt = JWT(app, authenticate, identity)
 product_schema = productSchema()
 products_schema = productSchema(many=True)
 
@@ -25,6 +27,7 @@ def add_product():
     return product_schema.jsonify(new)
 
 @app.route("/products",methods=["GET"])
+@jwt_required()
 def show_products():
     all = product.query.all()
     result = products_schema.dump(all)
@@ -84,23 +87,6 @@ def remove_user(id):
 
     return "User Removed "
 
-@app.route("/login")
-def login():
-    auth= request.authorization
 
-    if not auth or not auth.username or not auth.password:
-        return make_response("Unable to Verify",401,{'WWW-Authenticate': 'Basic realm'-"Login Required"})
-
-    user = users.query.filter_by(username=auth.username).first()
-
-    if not user:
-        return make_response("Unable to Verify",401,{'WWW-Authenticate': 'Basic realm'-"Login Required"})
-    
-    if bcrypt.checkpw(auth.password, user.password):
-        token = jwt.encode({'id': user.id,'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=45),app.config["SECRET_KEY"]})
-
-        return jsonify({'token': token.decode('UTF-8')})
-        
-    return make_response("Unable to Verify",401,{'WWW-Authenticate': 'Basic realm'-"Login Required"})
 
 

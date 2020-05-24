@@ -2,7 +2,9 @@ flask
 flask-sqlalchemy 
 flask-marshmallow 
 marshmallow-sqlalchemy
-mysqlclient
+#mysqlclient
 PyMySQL
 cryptography
 mysql-connector-python
+make_response
+bcrypt
