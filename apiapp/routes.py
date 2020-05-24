@@ -9,7 +9,7 @@ from datetime import timedelta
 jwt = JWT(app, authenticate, identity)
 product_schema = productSchema()
 products_schema = productSchema(many=True)
-app.config['JWT_EXPIRATION_DELTA'] = timedelta(seconds=1800)
+app.config['JWT_EXPIRATION_DELTA'] = timedelta(seconds=6000)
 
 db.create_all()
 

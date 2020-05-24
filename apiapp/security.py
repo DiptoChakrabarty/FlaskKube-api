@@ -13,4 +13,4 @@ def authenticate(username,password):
 
 def identity(payload):
     user_id = payload['identity']
-    return users.find_by_id(user_id)
+    return users.query.filter_by(id=user_id).first()
