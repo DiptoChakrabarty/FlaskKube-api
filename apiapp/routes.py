@@ -15,6 +15,7 @@ db.create_all()
 
 ### Routes
 @app.route("/productadd",methods=["POST"])
+@jwt_required()
 def add_product():
     name= request.json["name"]
     description= request.json["description"]
@@ -36,11 +37,13 @@ def show_products():
     return products_schema.jsonify(result) 
 
 @app.route("/product/<id>")
+@jwt_required()
 def show_product(id):
     result =  product.query.get(id)
     return product_schema.jsonify(result) 
 
 @app.route("/product/<id>",methods=["PUT"])
+@jwt_required()
 def update(id):
     result =  product.query.get(id)
 
@@ -58,6 +61,7 @@ def update(id):
     return product_schema.jsonify(result)
 
 @app.route("/product/<id>",methods=["DELETE"])
+@jwt_required()
 def delete_item(id):
     result =  product.query.get(id)
     db.session.delete(result)
