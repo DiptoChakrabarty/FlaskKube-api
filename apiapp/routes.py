@@ -30,7 +30,6 @@ def add_product():
     return product_schema.jsonify(new)
 
 @app.route("/products",methods=["GET"])
-@jwt_required()
 def show_products():
     all = product.query.all()
     result = products_schema.dump(all)
