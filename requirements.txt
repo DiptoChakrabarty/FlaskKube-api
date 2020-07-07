@@ -1,5 +1,6 @@
 flask 
 flask-sqlalchemy 
+uwsgi
 flask-marshmallow 
 marshmallow-sqlalchemy
 #mysqlclient
@@ -8,4 +9,4 @@ cryptography
 mysql-connector-python
 bcrypt
 make_response
-uwsgi
+
