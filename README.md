@@ -140,6 +140,8 @@ curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:
  | /product/id | GET | Show individual items data |
  | /product/id | PUT | Update items data |
  | /product/id  | DELETE| Delete items  |
+ | /users | POST | Register User |
+ | /auth | POST | Login User |
 
 
 
