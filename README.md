@@ -68,68 +68,12 @@ I have run and tested the application in minikube and online kubernetes IDE
 
 <img src="images/SVC.png">
 
-
-
-
 ## Send your Requests 	:bomb: 
+You can send request using Postman or using your terminal 
 
-You can send request using Postman  or using your terminal like this
+## For Routes Documentation visit:
+[Postman FlaskKube-API Docs](https://documenter.getpostman.com/view/11026000/TVRdBCDc)
 
-
-- Send Get Request
- This will allow user to see all contents he has entered
-
-```sh
-curl 10.109.209.60:5000/products
-
-```
-
-
-- Send Post Request 
-
-Allows users to add items
-
-```sh
-
-curl --header "Content-Type: application/json"   --request POST --data '{
-"name": "CSGO",
-"price": 40,
-"qty": 30,
-"description": "Shooter game first person"
-}'  10.109.209.60:5000/productadd
-
-```
-<img src="images/POST.png">
-
-
-
-- Put Request for a product
-
-Allows user to modify a specific item already entered
-
-```sh
- curl --header "Content-Type: application/json"   --request PUT --data '{
-"name": "Splinter Cell Chaos Theory",
-"price": 100,
-"qty": 3,
-"description": "Best Stealth game"
-}'  10.109.209.60:5000/product/2
-
-```
-
-<img src="images/PUT1.png">
-
-
-- Delete Request
-
-Allows users to remove items
-
-```sh
-curl --header "Content-Type: application/json"   --request DELETE 10.109.209.60:5000/product/4
-
-```
-
-<img src="images/DELETE11.png">
 
 ## Routes  :anger:
 
